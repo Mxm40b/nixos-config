@@ -1,0 +1,42 @@
+* {
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color: rgba(12, 12, 12, 0.0);
+}
+
+button {
+    border-radius: 20px;
+    border-color: black;
+	text-decoration-color: #000000;
+    color: #ffffff;
+	background-color: #101018;
+	border-style: solid;
+	border-width: 1px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20%;
+	margin: 15px;
+}
+
+button:focus, button:active, button:hover {
+	background-color: #101020;
+	outline-style: solid;
+	outline-width: 1px;
+	outline-radius: 20px;
+	outline-color: #8363f7;
+}
+
+#lock {
+    background-image: image(url("/home/mxmfrpr/.config/nixos/modules/assets/tao.svg"));
+}
+
+#shutdown {
+    background-image: image(url("/nix/store/4z27xs63bszh7lr7z9vy1w92m9vb9ifz-wlogout-1.2.2/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/nix/store/4z27xs63bszh7lr7z9vy1w92m9vb9ifz-wlogout-1.2.2/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
