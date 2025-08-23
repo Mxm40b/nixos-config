@@ -29,12 +29,12 @@
 
       # ./modules/pipewire_sink_conf.nix
 
-      ./modules/tiny-dfr.nix
+      # ./modules/tiny-dfr.nix
     ];
 
 
 
-  services.tiny-dfr.enable = true;
+  # services.tiny-dfr.enable = true;
 
 
 

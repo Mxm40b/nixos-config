@@ -625,5 +625,9 @@ in
       cargo
 
       haruna
+
+      qemu
+      quickgui
+      quickemu
     ];
 }
