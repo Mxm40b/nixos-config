@@ -83,7 +83,7 @@ in
       # kitty
       # wofi
       # playonlinux
-      ranger
+      # ranger
       # xfce.thunar
       # xfce.thunar-volman
       appimage-run
@@ -144,7 +144,7 @@ in
       lsp-plugins
       pavucontrol
 
-      musikcube
+      # musikcube
 
       ### do I _really_ need this??
       # wayland-pipewire-idle-inhibit
@@ -194,10 +194,10 @@ in
       # ifuse
       # vapor
 
-      lutrisFHS
+      # lutrisFHS
 
-      clinfo
-      kdePackages.qtsvg
+      # clinfo
+      # kdePackages.qtsvg
 
       # goldendict-ng
 

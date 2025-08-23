@@ -29,13 +29,13 @@ in
       #vim
       
       ### HOOOOLY
-      ripgrep
+      # ripgrep
       
 
-      mupdf
-      timg
+      # mupdf
+      # timg
       sioyek
-      anki
+      # anki
       waybar
       #ollama
       
@@ -67,8 +67,8 @@ in
       ferdium
 
       
-      lynx
-      browsh
+      # lynx
+      # browsh
 
       # browsr
 
@@ -90,7 +90,7 @@ in
       pfetch
       alsa-utils
       wev
-      file
+      # file
 
       # wineWayland
       wineWowPackages.waylandFull
@@ -105,7 +105,7 @@ in
       # librewolf-wayland
       
       # tor
-      tor-browser-bundle-bin
+      # tor-browser-bundle-bin
       # zim
       #logseq
       #affine
@@ -126,8 +126,8 @@ in
       # tdf
       # termpdfpy
       
-      llama-cpp
-      chess-tui
+      # llama-cpp
+      # chess-tui
       helix
       # dotool
       linuxPackages_6_1_hardened.bbswitch
@@ -147,7 +147,7 @@ in
       #
       
       wl-screenrec
-      gnuplot
+      # gnuplot
       # kdePackages.kalgebra
       # octave
       # rofi-wayland
@@ -155,7 +155,7 @@ in
       # rofi-emoji-wayland
       # marksman
       
-      audacity
+      # audacity
       # vlc
       mpv
       #vital
@@ -191,7 +191,7 @@ in
       ardour
       # gpu-viewer
       # glxinfo
-      neovim
+      # neovim
 
       # ngrrram
 
@@ -201,14 +201,14 @@ in
       # lenmus
 
 
-      typst
+      # typst
 
-      typstwriter
+      # typstwriter
 
       #(tatoeba site:)[https://tatoeba.org/en] 
       #(foreign language text reader to try:)[https://foreign-language-text-reader.sourceforge.io/FLTR_Documentation.pdf]
 
-      oh-my-git
+      # oh-my-git
 
       rustlings
       #marble
@@ -234,13 +234,13 @@ in
 
 
       # gnome-calendar
-      calcure
+      # calcure
       # remind
 
       # jami
 
       # abaddon
-      revolt-desktop
+      # revolt-desktop
       # qtox
       # element-web
 
@@ -282,7 +282,7 @@ in
       
       # cheese
       # yed
-      tenki
+      # tenki
 
       telegram-desktop
 
@@ -299,7 +299,7 @@ in
       # taskwarrior3
       # taskwarrior-tui
       
-      dijo
+      # dijo
       # harsh
 
       # doing
@@ -310,7 +310,7 @@ in
 
       # xorg.xhost
 
-      toipe
+      # toipe
 
       # frostwire-bin
 
@@ -335,7 +335,7 @@ in
 
       # tty-share
 
-      krita
+      # krita
 
       nemo
 
@@ -347,31 +347,31 @@ in
       moonlight-qt
 
 
-      plasma5Packages.kdenlive
+      # plasma5Packages.kdenlive
 
       # gpxsee
       # gnome-maps
 
-      oneko
+      # oneko
 
-      smenu
+      # smenu
 
       # vesktop
 
       # ii
       # kdePackages.konversation
-      cbonsai
+      # cbonsai
       # vtm
       # pscircle
       # tofi
 
       
-      hyprsunset
+      # hyprsunset
       # hyprpolkitagent
       #hyprnotify
       # hyprsysteminfo
 
-      hyprshade
+      # hyprshade
 
       # dissent
       # fractal
@@ -406,15 +406,15 @@ in
 
       # ninja
 
-      servo
+      # servo
 
       #brlcad
-      freecad
+      # freecad
       #openscad-unstable
 
       # whatsapp-for-linux
 
-      inkscape
+      # inkscape
 
       # xinput_calibrator
       # yabridge
@@ -422,9 +422,9 @@ in
 
       # exercism
 
-      ffmpeg
+      # ffmpeg
 
-      autotalent
+      # autotalent
 
       # dracut
 
@@ -449,7 +449,7 @@ in
 
       # pulseview
           
-      msr-tools
+      # msr-tools
 
       # kdePackages.kdeconnect-kde
 
@@ -490,10 +490,10 @@ in
 
       # glslviewer
 
-      chromium
+      # chromium
       # gcc
 
-      taoup
+      # taoup
 
       # python313Packages.psutil
 
@@ -519,20 +519,20 @@ in
 
       # opentrack-proton
       # opentrack
-      aitrack
+      # aitrack
 
       cmake
 
       rustc
 
       bat
-      eza
-      gitui
-      dust
+      # eza
+      # gitui
+      # dust
 
-      starship
+      # starship
 
-      ghostty
+      # ghostty
 
       bacon
 
@@ -559,12 +559,12 @@ in
 
       larynx
 
-      i3
+      # i3
 
       heroic
-      legendary-heroic
+      # legendary-heroic
 
-      nut
+      # nut
 
       gnome-mines
       freesweep
@@ -578,7 +578,7 @@ in
       reaper
       reaper-reapack-extension
 
-      gnome-usage
+      # gnome-usage
       kdePackages.filelight
 
       # gamescope
@@ -594,11 +594,11 @@ in
       wordnet
 
 
-      emacsPackages.anki-connect
+      # emacsPackages.anki-connect
 
       github-cli
 
-      piper-tts
+      # piper-tts
       # marytts
       # ekho
       nyxt
