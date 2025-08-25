@@ -12,7 +12,7 @@
       safeeyes.enable = false;
       snixembed =
         {
-          enable = true;
+          enable = false;
 
           beforeUnits =
             [

@@ -1,13 +1,17 @@
 { config, lib, pkgs, inputs, ... }:
 let
   tiny-dfr-better = pkgs.tiny-dfr.overrideAttrs (oldAttrs: rec {
-    src = pkgs.fetchFromGitHub {
-      owner = "dev-muhammad-adel"; # Replace with the desired GitHub owner
-      repo = "tiny-dfr";   # Replace with the desired repository name
-      rev = "app5"; # Replace with the desired commit, tag, or branch
-      sha256 = "sha256-QfVRSA+5w7jf3qWN9IpMf+6O9RoWvBF7+WGp+kh5H30="; 
+    src = builtins.path {
+      path = /home/mxmfrpr/projects/tiny-dfr;
+      name = "tiny-dfr-source";
     };
-    cargoHash = "sha256-17wh6i35kpknn2ph8ymqisk348nrmjyhs9a35dgqjwkvd636cx5k=";
+    # pkgs.fetchFromGitHub {
+    #   owner = "dev-muhammad-adel"; # Replace with the desired GitHub owner
+    #   repo = "tiny-dfr";   # Replace with the desired repository name
+    #   rev = "app5"; # Replace with the desired commit, tag, or branch
+    #   sha256 = "sha256-ZWhmUkCgeMRXj32GIk8IRG0KT8sb81ZDF/IZ0DA3/80="; 
+    # };
+    cargoHash = lib.fakeHash;
     buildInputs = oldAttrs.buildInputs ++ [
       pkgs.freetype
       pkgs.fontconfig
@@ -45,7 +49,7 @@ in
 
       apple.touchBar =
         {
-          enable = false;
+          enable = true;
           settings = 
             {
               MediaLayerDefault = true;

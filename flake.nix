@@ -130,7 +130,7 @@
               nixpkgs-xr.nixosModules.nixpkgs-xr
             inputs.musnix.nixosModules.musnix
               {
-                musnix.enable = false;
+                musnix.enable = true;
               #  musnix.alsaSeq.enable = true;
               #  musnix.ffado.enable = true;
               #  musnix.rtcqs.enable = false;

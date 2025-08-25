@@ -27,9 +27,7 @@
 
       # ./modules/environmentVariables.nix
 
-      # ./modules/pipewire_sink_conf.nix
-
-      # ./modules/tiny-dfr.nix
+      ./modules/pipewire_sink_conf.nix
     ];
 
 

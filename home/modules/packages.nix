@@ -490,7 +490,7 @@ in
 
       # glslviewer
 
-      # chromium
+      chromium
       # gcc
 
       # taoup
@@ -629,5 +629,7 @@ in
       qemu
       quickgui
       quickemu
+
+      firefox
     ];
 }

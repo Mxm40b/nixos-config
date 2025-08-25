@@ -47,6 +47,7 @@ let lutrisFHS = pkgs.buildFHSEnv
         '
       '';
   };
+  not-so-tiny-dfr = ( pkgs.callPackage /home/mxmfrpr/projects/tiny-dfr/default.nix {});
 
 in
 
@@ -118,7 +119,6 @@ in
       # fish
       # acpidump-all
       # coreboot-toolchain.x64
-      # tiny-dfr
       # youtube-tui
       
       wiki-tui
@@ -206,5 +206,9 @@ in
           -bios ${pkgs.OVMF.fd}/FV/OVMF.fd \
           "$@"
       '')
+      udev
+      vlc
+
+      # not-so-tiny-dfr
     ];
 }

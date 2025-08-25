@@ -18,6 +18,7 @@
             tree
           ];
           shell = pkgs.nushell;
+          home = "/home/mxmfrpr";
         };
       groups.realtime = { };
     };
