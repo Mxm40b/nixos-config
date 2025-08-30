@@ -48,7 +48,9 @@
           enable = true;
           enableRenice = false;
         };
-        kclock.enable = true;
+      kclock.enable = true;
+
+      niri.enable = true;
 
     };
 }

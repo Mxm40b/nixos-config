@@ -327,7 +327,7 @@ in
       # deluge
       # plasma5Packages.ktorrent
 
-      # easyeffects
+      easyeffects
 
       #idevicerestore
 
@@ -453,7 +453,7 @@ in
 
       # kdePackages.kdeconnect-kde
 
-      niri
+      # niri
       
       fuzzel
 
@@ -503,6 +503,7 @@ in
       # osu-lazer
 
       kitty
+      alacritty
 
       # bottles
 
@@ -631,5 +632,8 @@ in
       quickemu
 
       firefox
+
+      jack2
+      jack-example-tools
     ];
 }

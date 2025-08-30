@@ -210,5 +210,8 @@ in
       vlc
 
       # not-so-tiny-dfr
+
+      zsh
+      pstree
     ];
 }

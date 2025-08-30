@@ -40,7 +40,7 @@
               # CPU_MAX_PERF_ON_AC = 12;
               CPU_MAX_PERF_ON_AC = 100;
               CPU_MIN_PERF_ON_BAT = 0;
-              CPU_MAX_PERF_ON_BAT = 100;
+              CPU_MAX_PERF_ON_BAT = 60;
   
               # Optional helps save long term battery health
               START_CHARGE_THRESH_BAT0 = 20; # 40 and bellow it starts to charge
@@ -83,25 +83,47 @@
                  "resample.quality" = 0.1;
                };
             };
-          wireplumber.extraConfig."10-bluez" =
+          wireplumber.extraConfig =
             {
-              "monitor.bluez.properties" =
+              "10-bluez" =
                 {
-                 "bluez5.enable-sbc-xq" = true;
-                 "bluez5.enable-msbc" = true;
-                 "bluez5.enable-hw-volume" = true;
-                 "bluez5.roles" =
-                   [
-                     "hsp_hs"
-                     "hsp_ag"
-                     "hfp_hf"
-                     "hfp_ag"
-                     "a2dp_sink"
-                     "a2dp_source"
-                   ];
+                  "monitor.bluez.properties" =
+                    {
+                     "bluez5.enable-sbc-xq" = true;
+                     "bluez5.enable-msbc" = true;
+                     "bluez5.enable-hw-volume" = true;
+                     "bluez5.roles" =
+                       [
+                         "hsp_hs"
+                         "hsp_ag"
+                         "hfp_hf"
+                         "hfp_ag"
+                         "a2dp_sink"
+                         "a2dp_source"
+                       ];
+                    };
                 };
+              # "60-apple-t2-profile" =
+              #   {
+              #     "monitor.alsa.rules" =
+              #       [
+              #         {
+              #           matches =
+              #             [
+              #               { "device.name" = "alsa_card.pci-0000_04_00.3"; }
+              #             ];
+              #           actions =
+              #             {
+              #               update-props =
+              #                 {
+              #                   "device.profile" = "Default";
+              #                 };
+              #             };
+              #         }
+              #       ];
+              #   };
             };
-          extraLv2Packages = with pkgs;
+          extraLv2Packages =
             [
               pkgs.lsp-plugins
               pkgs.ladspaPlugins
@@ -217,5 +239,11 @@
       switcherooControl.enable = true;
       safeeyes.enable = false;
       gnome.at-spi2-core.enable = true;
+      displayManager = {
+        gdm.enable = false;
+      };
+      desktopManager = {
+        gnome.enable = false;
+      };
   };
 }

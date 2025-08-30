@@ -28,11 +28,13 @@
       # ./modules/environmentVariables.nix
 
       ./modules/pipewire_sink_conf.nix
+      # /home/mxmfrpr/projects/tiny-dfr/module.nix
+      ./modules/not-so-tiny-dfr.nix
     ];
 
 
 
-  # services.tiny-dfr.enable = true;
+  # services.tiny-dfr.enable = false;
 
 
 

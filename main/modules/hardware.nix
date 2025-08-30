@@ -1,22 +1,12 @@
 { config, lib, pkgs, inputs, ... }:
 let
-  tiny-dfr-better = pkgs.tiny-dfr.overrideAttrs (oldAttrs: rec {
-    src = builtins.path {
-      path = /home/mxmfrpr/projects/tiny-dfr;
-      name = "tiny-dfr-source";
-    };
-    # pkgs.fetchFromGitHub {
-    #   owner = "dev-muhammad-adel"; # Replace with the desired GitHub owner
-    #   repo = "tiny-dfr";   # Replace with the desired repository name
-    #   rev = "app5"; # Replace with the desired commit, tag, or branch
-    #   sha256 = "sha256-ZWhmUkCgeMRXj32GIk8IRG0KT8sb81ZDF/IZ0DA3/80="; 
-    # };
-    cargoHash = lib.fakeHash;
-    buildInputs = oldAttrs.buildInputs ++ [
-      pkgs.freetype
-      pkgs.fontconfig
-    ];
-  });
+  # not-so-tiny-dfr = import (pkgs.fetchFromGitHub {
+  #   owner = "dev-muhammad-adel";
+  #   repo = "tiny-dfr";
+  #   rev = "app5";
+  #   sha256 = "sha256-ERWoAXtfekziV5bmPpnFa76RlRNnsKPNyL69gQCd/Zo=";
+  # }) { inherit pkgs; };
+  not-so-tiny-dfr = import ./not-so-tiny-dfr.nix { inherit pkgs; inherit lib; };
 in
 {
   hardware =
@@ -56,7 +46,8 @@ in
               ShowButtonOutlines = false;
               EnablePixelShift = false;
             };
-          # package = tiny-dfr-better;
+          # package = import /home/mxmfrpr/projects/tiny-dfr/default.nix { inherit pkgs; };
+          package = not-so-tiny-dfr;
         };
 
       graphics = 

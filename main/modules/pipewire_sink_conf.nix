@@ -1,14 +1,11 @@
-# SPDX-License-Identifier: MIT
-# (C) 2022 The Asahi Linux Contributors
-
 { config, pkgs, lib, ... }:
 
 let
   t2AppleAudioDSP = pkgs.fetchFromGitHub {
     owner = "lemmyg";
     repo = "t2-apple-audio-dsp";
-    rev = "fdd10303c8e84d09cf31e8cd88a624a34b9ed186";
-    sha256 = "UnoZMONaYyhXkntTN+iUwcyjSquIgcw/Tw+ooNX9CzA=";
+    rev = "newfirs";
+    sha256 = "sha256-o8iw1X0+Jd3EV5167LLS9h8dcKlNUN6lvJZaKGT9Kyc=";
   };
   originalTweeterFilePath = "/usr/share/pipewire/devices/apple/macbook_pro_t2_16_1_tweeters-48k_4.wav";
   newTweeterFilePath = "${t2AppleAudioDSP}/firs/macbook_pro_t2_16_1_tweeters-48k_4.wav";
