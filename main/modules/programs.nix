@@ -34,7 +34,7 @@
       adb.enable = true;
       nix-ld.enable = true;
       appimage.binfmt = true; 
-      ladybird.enable = false;
+      ladybird.enable = true;
       kdeconnect.enable = false;
 
       dconf.enable = true;
@@ -48,8 +48,10 @@
           enable = true;
           enableRenice = false;
         };
-      kclock.enable = true;
-
+      # kclock =
+      #   {
+      #     enable = true;
+      #   };
       niri.enable = true;
 
     };

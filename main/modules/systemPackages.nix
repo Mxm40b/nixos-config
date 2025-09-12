@@ -213,5 +213,6 @@ in
 
       zsh
       pstree
+
     ];
 }

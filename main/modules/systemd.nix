@@ -48,7 +48,7 @@ in
           #fstrim.wantedBy = lib.mkForce [];
           tiny-dfr-better =
             {
-              enable = true;
+              enable = false;
               serviceConfig =
                 {
                   Description="Tiny Apple silicon touch bar daemon";

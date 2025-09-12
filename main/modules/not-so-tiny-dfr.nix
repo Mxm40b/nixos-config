@@ -1,7 +1,4 @@
-{
-  # pkgs ? import <nixpkgs> { system = "x86_64-linux"; }
-  pkgs, lib
-}:
+{ pkgs, ... }:
 
 let
   # default rust version was too old for the Cargo.toml
@@ -18,7 +15,7 @@ newRustPlatform.buildRustPackage {
     owner =  "dev-muhammad-adel";
     repo = "tiny-dfr";
     rev = "app5";
-    sha256 = pkgs.lib.fakeSha256;
+    sha256 = "sha256-QwCtaGKC/7rbBORCo/w91AWv54Z95nBU4jL8kVjKhgs=";
   };
 
   # cargoHash = pkgs.lib.fakeHash;

@@ -35,7 +35,7 @@ in
       # mupdf
       # timg
       sioyek
-      # anki
+      anki
       waybar
       #ollama
       
@@ -130,7 +130,7 @@ in
       # chess-tui
       helix
       # dotool
-      linuxPackages_6_1_hardened.bbswitch
+      linuxKernel.packages.linux_latest_libre.bbswitch
 
       
       #bibata-cursors-translucent
@@ -567,14 +567,14 @@ in
 
       # nut
 
-      gnome-mines
-      freesweep
-      libremines
-      minesweep-rs
+      # gnome-mines
+      # freesweep
+      # libremines
+      # minesweep-rs
 
       # nudoku
-      gnome-sudoku
-      plasma5Packages.ksudoku
+      # gnome-sudoku
+      # plasma5Packages.ksudoku
 
       reaper
       reaper-reapack-extension
@@ -590,9 +590,9 @@ in
 
       clang-tools
 
-      goldendict-ng
-      sdcv
-      wordnet
+      # goldendict-ng
+      # sdcv
+      # wordnet
 
 
       # emacsPackages.anki-connect
@@ -635,5 +635,18 @@ in
 
       jack2
       jack-example-tools
+
+      bankstown-lv2
+      lv2
+      swh_lv2
+
+      python313Packages.ipython
+      ty
+      python313Packages.mypy
+      spyder
+      python313Packages.pylsp-mypy
+      python313Packages.pyls-spyder
+
+      wolfram-engine
     ];
 }

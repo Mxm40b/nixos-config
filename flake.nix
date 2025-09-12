@@ -6,7 +6,6 @@
   nixConfig = {
     extra-substituters = ["https://cache.soopy.moe" "https://nix-gaming.cachix.org"];
     extra-trusted-public-keys = ["cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo=" "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
-
   };
   
   inputs =
@@ -23,7 +22,7 @@
           inputs.lix.follows = "lix";
         };
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-      nixos-hardware.url = "github:nixos/nixos-hardware";
+      nixos-hardware.url = "github:NixOS/nixos-hardware";
       home-manager =
         {
           url = "github:nix-community/home-manager";
@@ -37,7 +36,6 @@
       musnix =
         {
           url = "github:musnix/musnix";
-          #inputs.nixpkgs.follows = "nixos-hardware";
         };
       nur =
         {
@@ -55,8 +53,6 @@
         url = "github:hyprwm/hyprland-plugins";
         inputs.hyprland.follows = "hyprland";
       };
-      # fancontrol-gui.url = "github:JaysFreaky/fancontrol-gui";
-      # thorium-browser.url = "git+https://codeberg.org/Tomkoid/thorium-browser-nix";
       nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
       plover-flake.url = "github:openstenoproject/plover-flake";
       swww.url = "github:LGFae/swww";
@@ -79,13 +75,6 @@
     }@inputs:
     
   let
-    #nixpkgs = nixpkgs{
-    #  config.permittedInsecurePackages = [
-    #  "electron-27.3.11"
-    #  ];
-    #};
-    system = "x86_64-linux";
-    #lib = nixpkgs.lib;
     pkgs = import nixpkgs
       {
         system = "x86_64-linux";
@@ -96,7 +85,9 @@
         config.permittedInsecurePackages =
           [
             "electron-27.3.11"
-            "ventoy-1.1.05"
+            # "ventoy-1.1.05"
+            "ventoy-1.1.07"
+            "qtwebengine-5.15.19"
           ];
       };
     #nixpkgs.legacyPackages.${system};
@@ -123,19 +114,13 @@
                 nixpkgs.overlays =
                   [
                     nur.overlays.default
-                    # inputs.fancontrol-gui.overlays.default
                   ];
                 nixpkgs.config.allowUnfree = true;
               }
-              nixpkgs-xr.nixosModules.nixpkgs-xr
+            nixpkgs-xr.nixosModules.nixpkgs-xr
             inputs.musnix.nixosModules.musnix
               {
                 musnix.enable = true;
-              #  musnix.alsaSeq.enable = true;
-              #  musnix.ffado.enable = true;
-              #  musnix.rtcqs.enable = false;
-              #  musnix.soundcardPciId = "04:00.3";
-               # musnix.kernel.realtime = true;
               }
             ./main/configuration.nix
             ./hardware-configuration.nix
@@ -146,21 +131,12 @@
             
             home-manager.nixosModules.home-manager
               {
-                #wayland.windowManager.hyprland = {
-                #  enable = true;
-                #  plugins = [
-                #    inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprtrails
-                #  ];
-                #};
-                
                 home-manager.extraSpecialArgs = { inherit pkgs; inherit inputs; };
                 #home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.backupFileExtension = "backup";
                 
-                # TODO replace ryan with your own username
                 home-manager.users.mxmfrpr = import ./home/home.nix;
-                #home.homeDirectory = "/home/mxmfrpr";};
                 
                 # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
                 nixpkgs.config.allowUnfree = true;
@@ -170,22 +146,8 @@
           ];
         #specialArgs = { inherit inputs; };
 
-        specialArgs = inputs; #{ inherit inputs; };
+        specialArgs = inputs;
       };
-      #live = nixpkgs.lib.nixosSystem {
-      #  system = "x86_84-linux";
-      #  modules = [
-      #    ./configuration.nix
-      #  ];
-      #};
     };
-
-    #homeConfigurations = {
-    #  mxmfrpr = home-manager.lib.homeManagerConfiguration {
-    #    inherit pkgs;
-    #    extraSpecialArgs = { inherit inputs; };
-    #    modules = [ ./home.nix ];
-    #  };
-    #};
   };
 }

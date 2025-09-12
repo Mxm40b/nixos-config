@@ -38,6 +38,10 @@ let
       pkgs.lsp-plugins
       pkgs.ladspaPlugins
       pkgs.calf
+
+      pkgs.bankstown-lv2
+      pkgs.lv2
+      pkgs.swh_lv2
     ];
   };
 in

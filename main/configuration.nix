@@ -28,8 +28,9 @@
       # ./modules/environmentVariables.nix
 
       ./modules/pipewire_sink_conf.nix
+      # ./modules/pipewire_sink_conf_better.nix
       # /home/mxmfrpr/projects/tiny-dfr/module.nix
-      ./modules/not-so-tiny-dfr.nix
+      # ./modules/not-so-tiny-dfr.nix
     ];
 
 

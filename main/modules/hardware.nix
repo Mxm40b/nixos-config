@@ -11,6 +11,7 @@ in
 {
   hardware =
     {
+      # apple-t2.kernelChannel = "stable";
       firmware =
         [
           (pkgs.stdenvNoCC.mkDerivation (final: {
