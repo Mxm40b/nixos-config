@@ -15,7 +15,7 @@ newRustPlatform.buildRustPackage {
     owner =  "dev-muhammad-adel";
     repo = "tiny-dfr";
     rev = "app5";
-    sha256 = "sha256-QwCtaGKC/7rbBORCo/w91AWv54Z95nBU4jL8kVjKhgs=";
+    sha256 = "sha256-6XvuDpf8wHkzdhEAbf81XPiMANPD+2+UW1aSVQ2fgXs=";
   };
 
   # cargoHash = pkgs.lib.fakeHash;

@@ -551,7 +551,7 @@ in
       lldb
 
       jujutsu
-      lazyjj
+      # lazyjj
 
 
       xxkb
@@ -643,7 +643,7 @@ in
       python313Packages.ipython
       ty
       python313Packages.mypy
-      spyder
+      # spyder
       python313Packages.pylsp-mypy
       python313Packages.pyls-spyder
 

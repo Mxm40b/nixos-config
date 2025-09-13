@@ -54,5 +54,6 @@
       #   };
       niri.enable = true;
 
+      # regreet.enable = false;
     };
 }

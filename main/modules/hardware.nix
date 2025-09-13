@@ -48,7 +48,7 @@ in
               EnablePixelShift = false;
             };
           # package = import /home/mxmfrpr/projects/tiny-dfr/default.nix { inherit pkgs; };
-          package = not-so-tiny-dfr;
+          # package = not-so-tiny-dfr;
         };
 
       graphics = 

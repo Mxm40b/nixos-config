@@ -14,12 +14,20 @@
               #"audio" "jackaudio"
               "dialout"
             ]; 
-          packages = with pkgs; [
-            tree
-          ];
           shell = pkgs.nushell;
           home = "/home/mxmfrpr";
         };
       groups.realtime = { };
+      
+      users.greeter =
+        {
+          isSystemUser = true;
+          extraGroups =
+            [
+              "wheel" "networkmanager" "video" "input" "realtime"
+              #"audio" "jackaudio"
+              "dialout"
+            ]; 
+        };
     };
 }

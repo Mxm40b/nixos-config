@@ -175,7 +175,7 @@ in
       # python312Packages.tqdm
       # python312Packages.requests
       # python312Packages.inquirerpy
-      glaumar_repo.qrookie
+      # glaumar_repo.qrookie
 
       # ntfsprogs
 
@@ -214,5 +214,6 @@ in
       zsh
       pstree
 
+      # regreet
     ];
 }

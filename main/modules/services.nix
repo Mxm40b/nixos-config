@@ -248,5 +248,46 @@
       desktopManager = {
         gnome.enable = false;
       };
-  };
+
+      # greetd = {
+      #   enable = true;
+      #   settings = rec {
+      #     initial_session = {
+      #       command = "sh -c `systemctl stop tiny-dfr; sleep 2sec; .//home/mxmfrpr/projects/tiny-dfr/result/bin/tiny-dfr; sleep 2sec; su mxmfrpr; sleep 2sec; ${pkgs.niri}/bin/niri-session`";
+      #       user = "root";
+      #     };
+      #     default_session = initial_session;
+      #   };
+      # };
+
+      greetd =
+        let
+          niri-config = pkgs.writeText "niri-config" ''
+            hotkey-overlay {
+                skip-at-startup
+            }
+            environment {
+                GTK_USE_PORTAL "0"
+                GDK_DEBUG "no-portals"
+            }
+
+            // other settings
+
+            spawn-at-startup "sh" "-c" "${pkgs.greetd.regreet}/bin/regreet; pkill -f niri"
+            '';
+        in
+          {
+            enable = true;
+            settings = {
+              default_session = {
+                # command = "niri -c ${niri-config}";
+                command = 
+"sh -c `systemctl stop tiny-dfr; sleep 2sec; sudo .//home/mxmfrpr/projects/tiny-dfr/result/bin/tiny-dfr; sleep 2sec; su mxmfrpr; sleep 2sec; niri -c ${niri-config}`";
+                user = "greeter";
+              };
+            };
+          };
+
+    };
+    programs.regreet.enable = true;
 }
