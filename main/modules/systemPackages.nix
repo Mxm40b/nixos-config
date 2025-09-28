@@ -215,5 +215,9 @@ in
       pstree
 
       # regreet
+      tuigreet
+      gtkgreet
+
+      qt6Packages.qtstyleplugin-kvantum
     ];
 }

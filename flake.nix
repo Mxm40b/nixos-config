@@ -56,6 +56,11 @@
       nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
       plover-flake.url = "github:openstenoproject/plover-flake";
       swww.url = "github:LGFae/swww";
+      stylix =
+        {
+          url = "github:nix-community/stylix";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
 

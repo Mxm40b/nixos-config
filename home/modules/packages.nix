@@ -335,7 +335,7 @@ in
 
       # tty-share
 
-      # krita
+      krita
 
       nemo
 
@@ -648,5 +648,7 @@ in
       python313Packages.pyls-spyder
 
       wolfram-engine
+
+      librepcb
     ];
 }

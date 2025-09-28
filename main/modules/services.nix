@@ -40,7 +40,7 @@
               # CPU_MAX_PERF_ON_AC = 12;
               CPU_MAX_PERF_ON_AC = 70;
               CPU_MIN_PERF_ON_BAT = 0;
-              CPU_MAX_PERF_ON_BAT = 20;
+              CPU_MAX_PERF_ON_BAT = 50;
   
               # Optional helps save long term battery health
               START_CHARGE_THRESH_BAT0 = 20; # 40 and bellow it starts to charge
@@ -270,10 +270,70 @@
                 GTK_USE_PORTAL "0"
                 GDK_DEBUG "no-portals"
             }
+            input {
+              keyboard {
+                  xkb {
+                      layout "us,us,ru"
+                      variant "colemak,,"
+                      // You can set rules, model, layout, variant and options.
+                      // For more information, see xkeyboard-config(7).
+
+                      // For example:
+                      // layout "us,ru"
+                      // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+                      options "caps:swapescape, grp:alt_space_toggle"
+                  }
+
+                  // Enable numlock on startup, omitting this setting disables it.
+                  numlock
+              }
+
+              // Next sections include libinput settings.
+              // Omitting settings disables them, or leaves them at their default values.
+              touchpad {
+                  // off
+                  // tap
+                  // dwt
+                  // dwtp
+                  // drag false
+                  // drag-lock
+                  natural-scroll
+                  accel-speed 0.3
+                  // accel-profile "flat"
+                  // scroll-method "two-finger"
+                  // disabled-on-external-mouse
+              }
+
+              mouse {
+                  // off
+                  // natural-scroll
+                  accel-speed 0.18
+                  accel-profile "flat"
+                  // scroll-method "no-scroll"
+              }
+            }
+
+
+            // window-rule {
+            //   match is-focused=true
+            //   match at-startup=true
+
+
+            //   open-on-output "eDP-2"
+            // }
+
+
+
 
             // other settings
 
-            spawn-at-startup "sh" "-c" "${pkgs.greetd.regreet}/bin/regreet; pkill -f niri"
+            // output "eDP-2" {
+            //   off
+            // }
+
+            spawn-at-startup "sh" "-c" "`${pkgs.gtkgreet}/bin/gtkgreet; pkill -f niri`"
+            // spawn-at-startup "kitty" "tuigreet" "--cmd" "niri-session" ";" "pkill" "-f" "niri"
+            // spawn-at-startup "waybar"
             '';
         in
           {
@@ -281,13 +341,14 @@
             settings = {
               default_session = {
                 # command = "niri -c ${niri-config}";
-                command = 
-"sh -c `systemctl stop tiny-dfr; sleep 2sec; sudo .//home/mxmfrpr/projects/tiny-dfr/result/bin/tiny-dfr; sleep 2sec; su mxmfrpr; sleep 2sec; niri -c ${niri-config}`";
+                # command = "niri-session";
+                # command = "niri -c ${niri-config}";
+                command = "tuigreet --cmd niri-session";
                 user = "greeter";
               };
             };
           };
 
     };
-    programs.regreet.enable = true;
+    programs.regreet.enable = false;
 }

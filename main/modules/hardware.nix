@@ -40,7 +40,7 @@ in
 
       apple.touchBar =
         {
-          enable = true;
+          enable = false;
           settings = 
             {
               MediaLayerDefault = true;

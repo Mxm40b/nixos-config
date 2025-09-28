@@ -31,6 +31,9 @@
       # ./modules/pipewire_sink_conf_better.nix
       # /home/mxmfrpr/projects/tiny-dfr/module.nix
       # ./modules/not-so-tiny-dfr.nix
+
+
+      # ./modules/themes.nix
     ];
 
 
@@ -70,7 +73,6 @@
   
   powerManagement.enable = true;
   powerManagement.powertop.enable = false;
-
 
 
 

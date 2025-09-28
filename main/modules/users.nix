@@ -19,15 +19,15 @@
         };
       groups.realtime = { };
       
-      users.greeter =
-        {
-          isSystemUser = true;
-          extraGroups =
-            [
-              "wheel" "networkmanager" "video" "input" "realtime"
-              #"audio" "jackaudio"
-              "dialout"
-            ]; 
-        };
+      # users.greeter =
+      #   {
+      #     isSystemUser = true;
+      #     extraGroups =
+      #       [
+      #         "wheel" "networkmanager" "video" "input" "realtime"
+      #         #"audio" "jackaudio"
+      #         "dialout"
+      #       ]; 
+      #   };
     };
 }
