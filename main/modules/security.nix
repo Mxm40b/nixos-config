@@ -40,20 +40,21 @@
             '';
         };
       soteria.enable = false;
-      sudo =
+      sudo-rs =
         {
           enable = true;
-          extraRules = [{
-            users = [ "mxmfrpr" ];
-            groups = [ "wheel" ];
-            commands =
-              [
-                {
-                  command = "/home/mxmfrpr/projects/tiny-dfr/result/bin/tiny-dfr";
-                  options = ["NOPASSWD"];
-                }
-              ];
-          }];
+          wheelNeedsPassword = false;
+          # extraRules = [{
+          #   users = [ "mxmfrpr" ];
+          #   groups = [ "wheel" ];
+          #   commands =
+          #     [
+          #       {
+          #         command = "/home/mxmfrpr/projects/tiny-dfr/result/bin/tiny-dfr";
+          #         options = ["NOPASSWD"];
+          #       }
+          #     ];
+          # }];
         };
     };
 }

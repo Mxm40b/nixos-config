@@ -20,6 +20,8 @@
       ./modules/packages.nix
 
       # ./modules/services.nix
+
+      ./modules/file.nix
     ];
 
 
@@ -62,8 +64,8 @@
       };
     theme =
       {
-        name = "adw-gtk3-dark";
-        package = pkgs.adw-gtk3;
+        name = pkgs.lib.mkDefault "adw-gtk3-dark";
+        package = pkgs.lib.mkDefault pkgs.adw-gtk3;
       };
 
     iconTheme =
@@ -75,15 +77,15 @@
       };
   };
 
-  qt =
-    {
-      enable = true;
-      style =
-        {
-          name = "adwaita-dark";
-          package = pkgs.adwaita-qt;
-        };
-    };
+  # qt =
+  #   {
+  #     enable = true;
+  #     style =
+  #       {
+  #         name = pkgs.lib.mkDefault "adwaita-dark";
+  #         package = pkgs.lib.mkDefault pkgs.adwaita-qt;
+  #       };
+  #   };
 
   home.pointerCursor =
     {

@@ -19,6 +19,16 @@ in
     #     terminal = false;
     #     categories = [ "Game" ];
     #   };
+    # xdg.desktopEntries =
+    #   {
+    #     reaper =
+    #       {
+    #         name = "Reaper 3:3";
+    #         exec = "GDK_BACKEND=x11 reaper";
+    #         icon = "reaper";
+    #         terminal = false;
+    #       };
+    #   };
   
   home.packages =
     with pkgs;
@@ -201,7 +211,7 @@ in
       # lenmus
 
 
-      # typst
+      typst
 
       # typstwriter
 
@@ -409,7 +419,7 @@ in
       # servo
 
       #brlcad
-      # freecad
+      freecad
       #openscad-unstable
 
       # whatsapp-for-linux
@@ -649,6 +659,32 @@ in
 
       wolfram-engine
 
+      # (librepcb.overrideAttrs {
+      #   src = fetchFromGitHub
+      #     {
+      #       owner = "librePCB";
+      #       repo = "librePCB";
+      #       rev = "2fb5fe6e60de09bca5c821de9c4b9aa4ccc64a06";
+      #       hash = "sha256-OYncGLC8/oP+5Vh09GwMjwDNAhG938/Fz4RfejIJ5o1=";
+      #       fetchSubmodules = true;
+      #     };
+      # }
+      # )
       librepcb
+      kicad
+
+      hyprshot
+      neovim
+      neovim-gtk
+
+      kdePackages.kdenlive
+      youtube-tui
+      yt-dlp
+
+      tangram
+
+      bitwarden-desktop
+
+      gnome-tweaks
     ];
 }

@@ -56,11 +56,11 @@
       nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
       plover-flake.url = "github:openstenoproject/plover-flake";
       swww.url = "github:LGFae/swww";
-      stylix =
-        {
-          url = "github:nix-community/stylix";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
+      # stylix =
+      #   {
+      #     url = "github:nix-community/stylix";
+      #     inputs.nixpkgs.follows = "nixpkgs";
+      #   };
     };
 
 
@@ -76,6 +76,7 @@
       zen-browser,
       nur,
       nixpkgs-xr,
+      # stylix,
       ...
     }@inputs:
     
@@ -106,6 +107,9 @@
             modules =
               [
                 # lix-module.nixosModules.default
+
+
+                # stylix.nixosModules.stylix
                 
                 ({
                 nixpkgs.overlays =

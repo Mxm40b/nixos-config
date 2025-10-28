@@ -31,7 +31,7 @@
           enable = false;
           openFirewall = true; # This is set true by default
         };
-      adb.enable = true;
+      adb.enable = false;
       nix-ld.enable = true;
       appimage.binfmt = true; 
       ladybird.enable = true;
@@ -40,12 +40,12 @@
       dconf.enable = true;
         gamescope =
         {
-          enable = true;
+          enable = false;
           capSysNice = false;
         };
       gamemode =
         {
-          enable = true;
+          enable = false;
           enableRenice = false;
         };
       # kclock =

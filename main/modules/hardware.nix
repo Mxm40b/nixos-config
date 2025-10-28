@@ -40,7 +40,7 @@ in
 
       apple.touchBar =
         {
-          enable = false;
+          enable = true;
           settings = 
             {
               MediaLayerDefault = true;
@@ -57,7 +57,6 @@ in
           enable32Bit = true;
           extraPackages = with pkgs;
             [
-              amdvlk
               #pkgs.mesa.opencl
               
               vpl-gpu-rt
@@ -65,18 +64,7 @@ in
               mesa
               intel-media-driver
             ];
-          extraPackages32 = with pkgs;
-            [
-              driversi686Linux.amdvlk  
-
-              # driversi686Linux.mesa
-            ];
         };
-
-      amdgpu.amdvlk = {
-        enable = true;
-        support32Bit.enable = true;
-      };
 
       intel-gpu-tools.enable = true;
         

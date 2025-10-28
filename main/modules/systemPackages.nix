@@ -161,7 +161,7 @@ in
 
       # xygrib
       
-      hyprshot
+      # hyprshot
       # kupfer
       #xdg-desktop-portal-hyprland
       #rustdesk
@@ -218,6 +218,8 @@ in
       tuigreet
       gtkgreet
 
-      qt6Packages.qtstyleplugin-kvantum
+      # qt6Packages.qtstyleplugin-kvantum
+
+      # reaper
     ];
 }

@@ -33,7 +33,7 @@
       # ./modules/not-so-tiny-dfr.nix
 
 
-      # ./modules/themes.nix
+      ./modules/themes.nix
     ];
 
 
