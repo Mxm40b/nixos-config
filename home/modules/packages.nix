@@ -2,12 +2,64 @@
   pkgs,
   config,
   inputs,
+
+  # lib,
+  # fetchurl,
+  # stdenv,
+  # gtk3,
+  # makeWrapper,
+  # undmg,
+
+  # alsa-lib,
+  # curl,
+  # lame,
+  # libxml2,
+  # ffmpeg,
+  # vlc,
+  # xdg-utils,
+  # xdotool,
+  # which,
+  # jackSupport,
+  # jackLibrary,
+  # pulseaudioSupport,
+  # libpulseaudio,
+
+  # autoPatchelfHook,
   ...
 }
 : 
 
 let
   opentrack-proton = (import ./opentrack-proton.nix { inherit pkgs; });
+  # qmk-fixed = ( pkgs.callPackage /home/mxmfrpr/qmk_firmware/keyboards/crkbd/default.nix {});
+  # my-reaper = (import /home/mxmfrpr/projects/reaper/default.nix
+  # my-reaper = pkgs.reaper.over
+    # {
+    #   inherit pkgs;
+    #   inherit lib;
+    #   inherit fetchurl;
+    #   inherit config;
+    #   inherit stdenv;
+    #   inherit gtk3;
+    #   inherit makeWrapper;
+    #   inherit undmg;
+
+    #   inherit alsa-lib;
+    #   inherit curl;
+    #   inherit lame;
+    #   inherit libxml2;
+    #   inherit ffmpeg;
+    #   inherit vlc;
+    #   inherit xdg-utils;
+    #   inherit xdotool;
+    #   inherit which;
+    #   inherit jackSupport;
+    #   inherit jackLibrary;
+    #   inherit pulseaudioSupport;
+    #   inherit libpulseaudio;
+
+    #   inherit autoPatchelfHook;
+    # });
 in
 
 {
@@ -41,6 +93,7 @@ in
       ### HOOOOLY
       # ripgrep
       
+      renderdoc
 
       # mupdf
       # timg
@@ -140,8 +193,7 @@ in
       # chess-tui
       helix
       # dotool
-      linuxKernel.packages.linux_latest_libre.bbswitch
-
+      linuxPackages_xanmod_stable.bbswitch
       
       #bibata-cursors-translucent
       # bibata-cursors
@@ -262,7 +314,7 @@ in
 
       # rclone-browser
 
-      rkrlv2
+      # rkrlv2
 
       # sfxr-qt
 
@@ -586,8 +638,47 @@ in
       # gnome-sudoku
       # plasma5Packages.ksudoku
 
-      reaper
+      (reaper.overrideDerivation (oldAttrs: {
+        installPhase =
+          ''
+        runHook preInstall
+
+        HOME="$out/share" XDG_DATA_HOME="$out/share" ./install-reaper.sh \
+          --install $out/opt \
+          --integrate-user-desktop
+        rm $out/opt/REAPER/uninstall-reaper.sh
+
+        # Dynamic loading of plugin dependencies does not adhere to rpath of
+        # reaper executable that gets modified with runtimeDependencies.
+        # Patching each plugin with DT_NEEDED is cumbersome and requires
+        # hardcoding of API versions of each dependency.
+        # Setting the rpath of the plugin shared object files does not
+        # seem to have an effect for some plugins.
+        # We opt for wrapping the executable with LD_LIBRARY_PATH prefix.
+        # Note that libcurl and libxml2 are needed for ReaPack to run.
+        wrapProgram $out/opt/REAPER/reaper \
+          --set GDK_BACKEND "x11" \
+          --prefix LD_LIBRARY_PATH : "${
+            lib.makeLibraryPath [
+              curl
+              lame
+              libxml2
+              ffmpeg
+              vlc
+              xdotool
+              stdenv.cc.cc
+            ]
+          }"
+
+        mkdir $out/bin
+        ln -s $out/opt/REAPER/reaper $out/bin/
+
+        runHook postInstall
+      '';
+      }))
+      # my-reaper
       reaper-reapack-extension
+      reaper-sws-extension
 
       # gnome-usage
       kdePackages.filelight
@@ -596,7 +687,14 @@ in
 
       p7zip
 
-      python3
+      (python3.withPackages(ps: with ps;
+         [
+          matplotlib
+          # matplotlib-sixel
+        ]))
+      # python3
+      # python3Packages.matplotlib
+      # python3Packages.matplotlib-sixel
 
       clang-tools
 
@@ -650,35 +748,14 @@ in
       lv2
       swh_lv2
 
-      python313Packages.ipython
-      ty
-      python313Packages.mypy
-      # spyder
-      python313Packages.pylsp-mypy
-      python313Packages.pyls-spyder
 
-      wolfram-engine
-
-      # (librepcb.overrideAttrs {
-      #   src = fetchFromGitHub
-      #     {
-      #       owner = "librePCB";
-      #       repo = "librePCB";
-      #       rev = "2fb5fe6e60de09bca5c821de9c4b9aa4ccc64a06";
-      #       hash = "sha256-OYncGLC8/oP+5Vh09GwMjwDNAhG938/Fz4RfejIJ5o1=";
-      #       fetchSubmodules = true;
-      #     };
-      # }
-      # )
-      librepcb
-      kicad
+      # wolfram-engine
+      # kicad
 
       hyprshot
       neovim
-      neovim-gtk
 
       kdePackages.kdenlive
-      youtube-tui
       yt-dlp
 
       tangram
@@ -686,5 +763,13 @@ in
       bitwarden-desktop
 
       gnome-tweaks
+
+      qmk
+
+      distrobox
+      distrobox-tui
+      distrho-ports
+
+      # docker
     ];
 }

@@ -80,5 +80,6 @@ in
           enable = true;
           settings.allow-writes = "on";
         };
+      keyboard.qmk.enable = true;
     };
 }

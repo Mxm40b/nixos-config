@@ -41,9 +41,9 @@
   
               CPU_MIN_PERF_ON_AC = 0;
               # CPU_MAX_PERF_ON_AC = 12;
-              CPU_MAX_PERF_ON_AC = 60;
+              CPU_MAX_PERF_ON_AC = 80;
               CPU_MIN_PERF_ON_BAT = 0;
-              CPU_MAX_PERF_ON_BAT = 60;
+              CPU_MAX_PERF_ON_BAT = 80;
   
               # Optional helps save long term battery health
               START_CHARGE_THRESH_BAT0 = 20; # 40 and bellow it starts to charge

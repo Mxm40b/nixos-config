@@ -28,10 +28,9 @@
           jetbrains-mono
           rounded-mgenplus
         ];
-        fontconfig =
-          {
-            enable = true;
-            
-          };
+        # fontconfig =
+        #   {
+        #     enable = true;
+        #   };
     };
 }

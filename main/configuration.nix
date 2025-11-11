@@ -25,7 +25,7 @@
       ./modules/networking.nix
       ./modules/xdg.nix
 
-      # ./modules/environmentVariables.nix
+      ./modules/environmentVariables.nix
 
       # ./modules/pipewire_sink_conf.nix
       # ./modules/pipewire_sink_conf_better.nix
@@ -69,6 +69,7 @@
     VISUAL = "hx";
 
     # LD_LIBRARY_PATH = "";
+    hardeningDisable = "all";
   };
   
   powerManagement.enable = true;
